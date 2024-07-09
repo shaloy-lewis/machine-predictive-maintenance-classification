@@ -4,7 +4,8 @@ import sys
 
 from src.logger.logging import logging
 from src.exception.exception import customexception
-from src.utils.constants import TARGET, CAT_FEATURES, NUM_FEATURES
+from src.utils.constants import (TARGET, CAT_FEATURES, NUM_FEATURES,
+                                 VAL_SIZE, TEST_SIZE)
 
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
@@ -42,13 +43,13 @@ class DataIngestion:
             
             X_train,X_val,y_train,y_val=train_test_split(X
                                                , y
-                                               , test_size=0.2
+                                               , test_size=VAL_SIZE
                                                , stratify=y
                                                , shuffle=True
                                                , random_state=42)
             X_train,X_test,y_train,y_test=train_test_split(X_train
                                                , y_train
-                                               , test_size=0.2
+                                               , test_size=TEST_SIZE
                                                , stratify=y_train
                                                , shuffle=True
                                                , random_state=42)
