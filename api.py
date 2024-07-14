@@ -61,5 +61,3 @@ def predict_failure(data: MachineData):
         
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
-    
-    # Failure ,Failure Type_Random Failures,Failure Type_Tool Wear Failure
